@@ -29,21 +29,22 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEncrypt = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.normalFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.encryptedFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.decryptedFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rchInputBox = new System.Windows.Forms.RichTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnDecrypt = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rchtxtOutput = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
@@ -61,15 +62,15 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Input Text";
             // 
-            // button1
+            // btnEncrypt
             // 
-            this.button1.Location = new System.Drawing.Point(101, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(140, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Encrypt Text";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnEncrypt.Location = new System.Drawing.Point(92, 19);
+            this.btnEncrypt.Name = "btnEncrypt";
+            this.btnEncrypt.Size = new System.Drawing.Size(140, 23);
+            this.btnEncrypt.TabIndex = 2;
+            this.btnEncrypt.Text = "Encrypt Text";
+            this.btnEncrypt.UseVisualStyleBackColor = true;
+            this.btnEncrypt.Click += new System.EventHandler(this.button1_Click);
             // 
             // menuStrip1
             // 
@@ -97,7 +98,7 @@
             this.normalFileToolStripMenuItem,
             this.encryptedFileToolStripMenuItem});
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openToolStripMenuItem.Text = "&Open File";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -111,14 +112,24 @@
             // encryptedFileToolStripMenuItem
             // 
             this.encryptedFileToolStripMenuItem.Name = "encryptedFileToolStripMenuItem";
-            this.encryptedFileToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.encryptedFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.encryptedFileToolStripMenuItem.Text = "En&crypted File";
+            this.encryptedFileToolStripMenuItem.Click += new System.EventHandler(this.encryptedFileToolStripMenuItem_Click);
             // 
             // saveFileToolStripMenuItem
             // 
+            this.saveFileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.decryptedFileToolStripMenuItem});
             this.saveFileToolStripMenuItem.Name = "saveFileToolStripMenuItem";
             this.saveFileToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.saveFileToolStripMenuItem.Text = "&Save File";
+            // 
+            // decryptedFileToolStripMenuItem
+            // 
+            this.decryptedFileToolStripMenuItem.Name = "decryptedFileToolStripMenuItem";
+            this.decryptedFileToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.decryptedFileToolStripMenuItem.Text = "Decrypted File";
+            this.decryptedFileToolStripMenuItem.Click += new System.EventHandler(this.decryptedFileToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -148,8 +159,8 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.progressBar1);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.btnDecrypt);
+            this.groupBox2.Controls.Add(this.btnEncrypt);
             this.groupBox2.Location = new System.Drawing.Point(12, 278);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1131, 113);
@@ -164,19 +175,19 @@
             this.progressBar1.Size = new System.Drawing.Size(1057, 23);
             this.progressBar1.TabIndex = 4;
             // 
-            // button2
+            // btnDecrypt
             // 
-            this.button2.Location = new System.Drawing.Point(299, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(142, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Decrypt Text";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnDecrypt.Location = new System.Drawing.Point(284, 19);
+            this.btnDecrypt.Name = "btnDecrypt";
+            this.btnDecrypt.Size = new System.Drawing.Size(142, 23);
+            this.btnDecrypt.TabIndex = 3;
+            this.btnDecrypt.Text = "Decrypt Text";
+            this.btnDecrypt.UseVisualStyleBackColor = true;
+            this.btnDecrypt.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.richTextBox1);
+            this.groupBox3.Controls.Add(this.rchtxtOutput);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Location = new System.Drawing.Point(12, 421);
             this.groupBox3.Name = "groupBox3";
@@ -185,14 +196,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Output";
             // 
-            // richTextBox1
+            // rchtxtOutput
             // 
-            this.richTextBox1.Enabled = false;
-            this.richTextBox1.Location = new System.Drawing.Point(68, 9);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(1057, 202);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
+            this.rchtxtOutput.Enabled = false;
+            this.rchtxtOutput.Location = new System.Drawing.Point(68, 9);
+            this.rchtxtOutput.Name = "rchtxtOutput";
+            this.rchtxtOutput.Size = new System.Drawing.Size(1057, 202);
+            this.rchtxtOutput.TabIndex = 2;
+            this.rchtxtOutput.Text = "";
             // 
             // label2
             // 
@@ -241,7 +252,7 @@
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEncrypt;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
@@ -249,15 +260,16 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnDecrypt;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rchtxtOutput;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.RichTextBox rchInputBox;
         private System.Windows.Forms.ToolStripMenuItem normalFileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem encryptedFileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem decryptedFileToolStripMenuItem;
     }
 }
 

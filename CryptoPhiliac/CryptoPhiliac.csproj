@@ -52,8 +52,7 @@
     <Compile Include="CryptoMain.Designer.cs">
       <DependentUpon>CryptoMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Decrypt.cs" />
-    <Compile Include="Encrypt.cs" />
+    <Compile Include="Crypto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CryptoMain.resx">
